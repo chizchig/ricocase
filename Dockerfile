@@ -1,4 +1,4 @@
-# Use node:alpine as the base image for the builder stage
+# Stage 1: Build stage
 FROM node:alpine AS builder
 
 # Set the working directory
@@ -16,17 +16,20 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Start a new stage from node:alpine to create a lightweight production image
+# Stage 2: Production stage
 FROM node:alpine
 
-# Set the working directory in the image
+# Set the working directory
 WORKDIR /app
 
 # Copy the built application from the builder stage
 COPY --from=builder /app .
 
+# Install only production dependencies
+RUN npm install --only=production
+
 # Expose the port the app runs on
-EXPOSE 3000
+EXPOSE 8000
 
 # Command to run the application
-CMD ["npm", "start"]
+CMD ["node", "index.js"]

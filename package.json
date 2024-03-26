@@ -4,12 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node"
+    "test": "node",
+    "start": "node index.js",
+    "build": "uglifyjs index.js -o index.min.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongoose": "^8.2.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.17.4"
   }
 }

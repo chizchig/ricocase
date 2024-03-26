@@ -25,8 +25,11 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t shadowhub/raz:${{ steps.datetime.outputs.tag }} .
+          docker build -t shadowhub/swore:${{ steps.datetime.outputs.tag }} .
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push shadowhub/raz:${{ steps.datetime.outputs.tag }}
+          docker push shadowhub/swore:${{ steps.datetime.outputs.tag }}
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker push shadowhub/swore:${{ steps.datetime.outputs.tag }}
