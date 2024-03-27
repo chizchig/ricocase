@@ -23,12 +23,9 @@ spec:
         - name: dockerhub-credentials
       containers:
         - name: swiss-container
-          image: shadowhub/swore
+          image: shadowhub/beer_factory_app
           ports:
-            - containerPort: 3000
-          env:
-            - name: NODE_ENV
-              value: production
+            - containerPort: 8000
           resources:
             limits:
               cpu: 500m
@@ -36,11 +33,4 @@ spec:
             requests:
               cpu: 100m
               memory: 128Mi
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 3000
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: 3000
+          
