@@ -29,7 +29,7 @@ jobs:
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push shadowhub/swore:${{ steps.datetime.outputs.tag }}
+          docker push shadowhub/beer_factory_app:${{ steps.datetime.outputs.tag }}
       - name: Push Docker image to Docker Hub
         run: |
           docker push shadowhub/swore:${{ steps.datetime.outputs.tag }}
