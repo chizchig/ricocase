@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: swiss-deployment
+  name: new-swiss-deployment
   labels:
     app: swiss-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: swiss-app
+      app: swiss-app  # Update the selector if needed
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       labels:
-        app: swiss-app
+        app: swiss-app  # Update the labels if needed
     spec:
       imagePullSecrets:
         - name: dockerhub-credentials
