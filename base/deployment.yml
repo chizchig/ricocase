@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: swiss-deployment
+  name: swiss-deployment-new
   labels:
     app: swiss-app
 spec:
@@ -33,4 +33,3 @@ spec:
             requests:
               cpu: 100m
               memory: 128Mi
-          
