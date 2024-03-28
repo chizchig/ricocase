@@ -4,7 +4,7 @@ metadata:
   name: swiss-deployment 
 spec:
   selector:
-    app: swiss-deployment 
+    app: swiss-appt 
   ports: 
   - name: http 
     port: 8000

@@ -3,12 +3,12 @@ kind: Deployment
 metadata:
   name: swiss-deployment
   labels:
-    app: swiss-deployment
+    app: swiss-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: swiss-deployment
+      app: swiss-app
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -17,7 +17,7 @@ spec:
   template:
     metadata:
       labels:
-        app: swiss-deployment
+        app: swiss-app
     spec:
       imagePullSecrets:
         - name: dockerhub-credentials
